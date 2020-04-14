@@ -1,0 +1,81 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  .fade-appear {
+    opacity: 0;
+    z-index: 1;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 1000ms linear;
+}
+/* enter */
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms linear 1000ms;
+}
+/* exit */
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms linear;
+}
+.fade-exit-done {
+opacity: 0;
+}
+  .App-header {
+    background-color: #282c34;
+    min-height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    display: inline-block; 
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  .subjectName{
+    position: absolute ;
+    top: 25px;
+    left: 45%;
+  }
+  .backButton{
+    top: 25px;
+    left: 91%;
+    position: absolute ;
+  }
+  .startButton{
+    font-size: 20px;
+    color: white;
+  }
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
