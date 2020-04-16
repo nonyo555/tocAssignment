@@ -5,11 +5,12 @@ import {CSSTransition} from 'react-transition-group'
 class  Coinpage extends Component {
     state = {
         counters: [
-            {id :11 , name:"5 Coin"},
-            {id :12 , name:"10 Coin"},
+            {id :11 , name:"5 Coin",input:5},
+            {id :12 , name:"10 Coin",input:10},
         ]
       };
     render() { 
+        
         return (    
             <div><CSSTransition
             in = {true}
@@ -18,7 +19,7 @@ class  Coinpage extends Component {
             classNames = "fade">
             <div className= 'productBox'>
             {this.state.counters.map(counter => (
-              <Products page = {this.props.page} nextstate = {this.props.nextstate} key={counter.id} id={counter.id} value = {counter.name} selected = {true} />
+              <Products page = {this.props.page} addmoney={this.props.addmoney} nextstate = {this.props.nextstate} input={counter.input} key={counter.id} id={counter.id} value = {counter.name} selected = {true}test={this.props.test} />
             )
             )}
             </div>
