@@ -5,10 +5,10 @@ import { CSSTransition } from 'react-transition-group';
 class  Tastepage extends Component {
     state = {
         counters: [
-            {id :4 , name:"Paprika"},
-            {id :5 , name:"Salt"},
-            {id :6, name:  "BBQ"},
-            {id :7 , name:"Seaweed nori"}
+            {id :4 , name:"Paprika",input:"A"},
+            {id :5 , name:"Salt",input:"B"},
+            {id :6, name:  "BBQ",input:"C"},
+            {id :15 , name:"Seaweed nori",input:"D"}
         ]
       };
     render() { 
@@ -21,7 +21,7 @@ class  Tastepage extends Component {
             classNames = "fade">
             <div className= 'productBox'>
             {this.state.counters.map(counter => (
-              <Products page = {this.props.page} nextstate = {this.props.nextstate} key={counter.id} id={counter.id} value = {counter.name} selected = {true} />
+              <Products page = {this.props.page} nextstate = {this.props.nextstate} key={counter.id} input={counter.input} id={counter.id} value = {counter.name} selected = {true} test={this.props.test}/>
             )
             )}
             </div>

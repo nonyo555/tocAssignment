@@ -5,9 +5,9 @@ import { CSSTransition } from 'react-transition-group';
 class  Sizepage extends Component {
     state = {
         counters: [
-            {id :7 , name:"S Size"},
-            {id :8 , name:"M Size"},
-            {id :9 , name:"L Size"},
+            {id :7 , name:"S Size",input:"S"},
+            {id :8 , name:"M Size",input:"M"},
+            {id :9 , name:"L Size",input:"L"},
         ]
       };
     render() { 
@@ -20,7 +20,7 @@ class  Sizepage extends Component {
             classNames = "fade">
             <div className= 'productBox'>
             {this.state.counters.map(counter => (
-              <Products page = {this.props.page} nextstate = {this.props.nextstate} key={counter.id} id={counter.id} value = {counter.name} selected = {true} />
+              <Products page = {this.props.page} setsize ={this.props.setsize} nextstate = {this.props.nextstate} key={counter.id} input={counter.input} id={counter.id} value = {counter.name} selected = {true} test={this.props.test}/>
             )
             )}
             </div>
