@@ -16,10 +16,15 @@ class Finalpage extends Component {
         return (  
          <div>    
              <h1>Your choose this product</h1>
+<<<<<<< HEAD
         <h2> {this.props.nameInput[0]} -> {this.props.nameInput[1]} -> {this.props.nameInput[2]} -> Total price : {this.props.price} Your Money : {this.props.coin} Your Change: {this.props.tron}</h2>
              <h3>Are you sure to purchash this prouduct?</h3>
              <button className ="badge badge-primary"  onClick =  {this.props.startstate}>Confirm</button>
              <button className ="badge badge-primary" color = "Red"  onClick =  {this.props.cancle}>Cancle</button>
+=======
+             <h2> {this.props.nameInput}</h2>
+             <button className ="badge badge-primary"  onClick =  {this.props.startstate}>Are you sure to purchash this prouduct?</button>
+>>>>>>> master
          </div>
         );
     }
