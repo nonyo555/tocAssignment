@@ -36,7 +36,6 @@ class AppPage extends Component {
         })
     }
     startstate= ()=>{
-<<<<<<< HEAD
         alert("Your order has success")
         this.setState( {
             page : 0,
@@ -71,38 +70,16 @@ class AppPage extends Component {
         this.state.input.pop()
         this.state.nameInput.pop()
     }
-=======
-        this.setState( {page : 0})
-        this.setState({input : [],nameInput : []})
-        this.setState({
-            coin : 0,price :0,size :0,tron:0
-        })
-    }
-    backstate = () =>{
-    if(this.state.page === 4){
-        this.setState({
-            size : "",
-            price : 0
-        })
-    }
->>>>>>> master
     this.setState({ 
         page: this.state.page -1 ,
         coin :0
     })
-<<<<<<< HEAD
     //this.setState(state=>{
     //    state.input.splice(this.state.page-2,1)
     //    state.nameInput.splice(this.state.page-2,1)
     //}
     //)
     
-=======
-    this.setState(state=>{
-        state.input.splice(this.state.page-2,1)
-        state.nameInput.splice(this.state.page-2,1)
-    })
->>>>>>> master
     console.log(this.state)
     }
     setsize = (x,y) =>{
@@ -207,11 +184,7 @@ class AppPage extends Component {
                     //Model Detaail (?) sign 
                     console.log(this.state)
                      return(           
-<<<<<<< HEAD
                         <Finalpage tron = {this.state.tron}coin = {this.state.coin} price = {this.state.price} page = {this.state.page} cancle = {this.cancle} startstate = {this.startstate} test={this.test} nameInput={this.state.nameInput}/>
-=======
-                        <Finalpage  page = {this.state.page} startstate = {this.startstate} test={this.test} nameInput={this.state.nameInput}/>
->>>>>>> master
                         );
                     }    
         
