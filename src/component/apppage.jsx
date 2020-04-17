@@ -7,7 +7,7 @@ import Finalpage from './finalpage'
 import './apppage.scss'
 import {CSSTransition} from 'react-transition-group'
 import firebasedb from './product_type/db/firebasedb';
-
+import Card from './product_type/card'
 class AppPage extends Component {
     state = {
         page : 0,
@@ -25,6 +25,9 @@ class AppPage extends Component {
     nextstate= ()=>{
         this.setState( {page :this.state.page+ 1})
     }
+    samestate = ()=>{
+        this.setState( {page :this.state.page})
+    }
     addmoney=(x)=>{
         this.setState(state=>{
             state.coin += x/2
@@ -32,6 +35,8 @@ class AppPage extends Component {
                 state.tron = state.coin - state.price
                 this.nextstate()
             }
+            else
+                this.samestate()
             //state.input.push(x)
         })
     }
@@ -125,15 +130,13 @@ class AppPage extends Component {
             <script src="/__/firebase/7.13.1/firebase-analytics.js"></script>
             <script src="/__/firebase/init.js"></script>
                   <header className="App-header">
-  
-                        
-                     
                     <div className='subjectName'>
                   <span className = "badge badge-primary">Theory of Computation</span>
                     </div>
                   {/* <span className = "badge badge-warning" onClick= {this.detailstate}>?</span> */}
                   <span className='backButton'>{this.performbackButton()}</span>
             </header>
+            <span>{this.performCard()}</span>
                 <span>{this.switchPage()}</span>
 
             </div>
@@ -186,8 +189,7 @@ class AppPage extends Component {
                      return(           
                         <Finalpage tron = {this.state.tron}coin = {this.state.coin} price = {this.state.price} page = {this.state.page} cancle = {this.cancle} startstate = {this.startstate} test={this.test} nameInput={this.state.nameInput}/>
                         );
-                    }    
-        
+                    }           
     }
     performbackButton(){
         if(this.state.page !== 0 && this.state.page !== 5){
@@ -196,8 +198,12 @@ class AppPage extends Component {
             );
         }
     }
-
-
+    performCard(){
+        if(this.state.page !== 0  && this.state.page !==5  ){
+            return (
+                <Card list = {this.state.input} page = {this.state.page} coin = {this.state.coin}/>
+            );
+        }
+    }
 }
- 
 export default AppPage;

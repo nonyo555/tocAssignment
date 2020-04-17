@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Products from './product_type/products' 
-import './tastepage.scss'
+//import './tastepage.scss'
 import { CSSTransition } from 'react-transition-group';
 class  Tastepage extends Component {
     state = {

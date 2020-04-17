@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Products from './product_type/products' 
-import './coinpage.scss'
+//import './coinpage.scss'
 import {CSSTransition} from 'react-transition-group'
 class  Coinpage extends Component {
     state = {
