@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import receipt from "./product_type/product_picture/receipt.png"
 class Finalpage extends Component {
     state = { 
         last : [
@@ -6,20 +7,18 @@ class Finalpage extends Component {
         ]
      }
     render() { 
-        var i ;
-        for (i=0;i<this.props.nameInput.length;i++){
-            this.setState(state=>{
-                const list = this.state.last.push(this.props.nameInput[i])
-                if(i !=this.props.nameInput.length-1){const list2 = this.state.last.push("->")
-            }})
-        }
         return (  
-         <div>    
+         <div className ="receipt">    
              <h1>Your choose this product</h1>
-        <h2> {this.props.nameInput[0]} -> {this.props.nameInput[1]} -> {this.props.nameInput[2]} -> Total price : {this.props.price} Your Money : {this.props.coin} Your Change: {this.props.tron}</h2>
+        <h2> {this.props.nameInput[0]}<br />
+             {this.props.nameInput[1]}<br />
+             {this.props.nameInput[2]}<br />
+             Total price : {this.props.price}<br /> 
+             Your Money : {this.props.coin}<br /> 
+             Your Change: {this.props.tron}</h2><br />
              <h3>Are you sure to purchash this prouduct?</h3>
-             <button className ="badge badge-primary"  onClick =  {this.props.startstate}>Confirm</button>
-             <button className ="badge badge-primary" color = "Red"  onClick =  {this.props.cancle}>Cancle</button>
+             <button className ="btn btn-success"  onClick =  {this.props.startstate}>Confirm</button>
+             <button className ="btn btn-outline-danger"  onClick =  {this.props.cancle}>Cancle</button>
          </div>
         );
     }
