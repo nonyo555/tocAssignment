@@ -70,6 +70,12 @@ opacity: 0;
   .App-link {
     color: #61dafb;
   }
+  .logo{
+    position:  absolute;
+    top: 1%;
+    height:   62.5px;
+    width:   250px;
+  }
   
   @keyframes App-logo-spin {
     from {
@@ -78,5 +84,9 @@ opacity: 0;
     to {
       transform: rotate(360deg);
     }
+  }
+  .mc{
+    position: absolute;
+    left: 37.5%;
   }
   
