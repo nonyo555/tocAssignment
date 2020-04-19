@@ -5,7 +5,7 @@ class Finalpage extends Component {
     state = { 
         last : [
 
-        ]
+        ],
      }
     render() { 
         return (  
@@ -22,6 +22,9 @@ class Finalpage extends Component {
             
              Your Money : {this.props.coin}<br /> 
              Your Change: {this.props.tron}<br />   
+             </div>
+             <div className='receiptInput'>
+                 <span>{this.laststate()}</span>
              </div>
              <div className ='totalPrice'>
              {this.props.price}
@@ -49,6 +52,24 @@ class Finalpage extends Component {
          </div>
         );
     }
+    laststate(){
+        var inputlast = []
+        for(var i =0;i<this.props.input.length;i++){
+            if(this.props.input[i] === 5){
+                inputlast.push('V')
+            }
+            else if(this.props.input[i]=== 10){
+                inputlast.push('X')
+            }
+            else {
+                inputlast.push(this.props.input[i])
+            }
+        }
+        return(
+            <span>{inputlast}</span>
+        )
+    }
+    
 }
  
 export default Finalpage;

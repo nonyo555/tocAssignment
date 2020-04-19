@@ -21,6 +21,7 @@ class AppPage extends Component {
         nameInput:[
 
         ],
+
         coin : 0,
         size : '',
         price:0,
@@ -222,7 +223,7 @@ class AppPage extends Component {
                     //Model Detaail (?) sign 
                     console.log(this.state)
                      return(           
-                        <Finalpage tron = {this.state.tron}coin = {this.state.coin} price = {this.state.price} page = {this.state.page} cancle = {this.cancle} startstate = {this.startstate} test={this.test} nameInput={this.state.nameInput}/>
+                        <Finalpage input = {this.state.input} tron = {this.state.tron}coin = {this.state.coin} price = {this.state.price} page = {this.state.page} cancle = {this.cancle} startstate = {this.startstate} test={this.test} nameInput={this.state.nameInput}/>
                         );
                     }           
     }
