@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Products from './product_type/products' 
-//import './coinpage.scss'
+import './coinpage.scss'
 import {CSSTransition} from 'react-transition-group'
 class  Coinpage extends Component {
     state = {
@@ -17,7 +17,7 @@ class  Coinpage extends Component {
             appear ={true}
             timeout ={600}
             classNames = "fade">
-            <div className= 'productBox'>
+            <div className= 'productBox3'>
             {this.state.counters.map(counter => (
               <Products page = {this.props.page} addmoney={this.props.addmoney} nextstate = {this.props.nextstate} input={counter.input} key={counter.id} id={counter.id} value = {counter.name} selected = {true}test={this.props.test} />
             )

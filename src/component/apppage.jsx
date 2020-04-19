@@ -159,7 +159,7 @@ class AppPage extends Component {
          return (
              <div className = 'howto'>
                      <div  className= 'closehowto'>
-                     <span className='btn-danger' onClick = {this.nextstate}>X</span>
+                     <span className='btn-danger' onClick = {this.nextstate}>[ X ]</span>
                      </div>
              </div>
          )
