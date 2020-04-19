@@ -61,7 +61,6 @@ class  Products extends Component {
                     <img src = {prod_image } className = 'imageIU'/>
                     <div className="information">
                     <div className="name">{this.props.value}</div>
-                    <div className="store">ikea.com</div>
                     <a href="#" className="button" onClick={()=>{this.props.setsize(this.props.input,this.props.value);this.props.nextstate();}}>Purchase Product</a>
                 </div>
                 </div>)
@@ -78,7 +77,6 @@ class  Products extends Component {
                 <img src = {prod_image } className = 'imageIU'/>
                 <div className="information">
                 <div className="name">{this.props.value}</div>
-                <div className="store">ikea.com</div>
                 <a href="#" className="button" onClick={()=>{this.props.test(this.props.input,this.props.value);this.props.addmoney(this.props.input);}}>Purchase Product</a>
             </div>
             </div>)
@@ -90,7 +88,6 @@ class  Products extends Component {
             <img src = {prod_image } className = 'imageIU'/>
             <div className="information">
             <div className="name">{this.props.value}</div>
-            <div className="store">ikea.com</div>
             <a href="#" className="button" onClick={()=>{this.props.test(this.props.input,this.props.value)}}>Purchase Product</a>
         </div>
         </div>

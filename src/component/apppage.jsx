@@ -8,10 +8,12 @@ import './apppage.scss'
 import {CSSTransition} from 'react-transition-group'
 import firebasedb from './product_type/db/firebasedb';
 import Card from './product_type/card'
-import logo  from './product_type/product_picture/Logo.png'
+import logoabc  from './product_type/product_picture/Logo.png'
 import mc from './product_type/product_picture/mc.png'
+
 class AppPage extends Component {
     state = {
+        howpage : 1,
         page : 0,
         input : [
 
@@ -22,7 +24,8 @@ class AppPage extends Component {
         coin : 0,
         size : '',
         price:0,
-        tron :0
+        tron :0,
+        
       }
     nextstate= ()=>{
         this.setState( {page :this.state.page+ 1})
@@ -51,7 +54,9 @@ class AppPage extends Component {
             coin : 0,
             price :0,
             size :0,
-            tron:0})
+            tron:0,
+            howpage: 0
+        })
     }
     cancle =() =>{
         this.setState( {
@@ -132,35 +137,59 @@ class AppPage extends Component {
             <script src="/__/firebase/7.13.1/firebase-analytics.js"></script>
             <script src="/__/firebase/init.js"></script>
                   <header className="App-header">
-                    <image src={logo} className='logo' />
+                    <div className = 'logoBox'>
+                  <image src={logoabc} className='logo' />
+                  </div>
                     <div className='subjectName'>
-                  <span className = "badge badge-primary">Theory of Computation</span>
+                    
+                    <span className = "badge badge-primary">Theory of Computation</span>
                     </div>
                   {/* <span className = "badge badge-warning" onClick= {this.detailstate}>?</span> */}
                   <span className='backButton'>{this.performbackButton()}</span>
             </header>
             <span>{this.performCard()}</span>
             <span>{this.switchPage()}</span>
+            
+      
             </div>
         );
     }
     switchPage(){
-        
-        if(this.state.page === 0){
+        if (this.state.page === -1){
+         return (
+             <div className = 'howto'>
+                     <div  className= 'closehowto'>
+                     <span className='btn-danger' onClick = {this.nextstate}>X</span>
+                     </div>
+             </div>
+         )
+         }
+        else if(this.state.page === 0){
             //HomePage
             return (
                 <div className = 'Home'>
-                    <h1>App Name</h1>
+                    <div className = 'studentName'>
+                    <h1>CE Project</h1>
                     <h2>
-                        bah  bah bah  bah 
+                        รหัสนักศึกษา     ชื่อ-นามสกุล
                     </h2>
+                    <span>
+                    bah <br/>
+                    bah <br/>
+                    bah <br/>
+                    bah <br/>
+                    bah <br/>
+
+                    </span>
+                    </div>
+                    <div  className = 'mc' > 
                     <div className = 'startButton'>
-                    <button className= "badge badge-warning" onClick = {this.nextstate}>Let's Get Start</button>
+                    <span className= "badge badge-dark" onClick = {this.nextstate}>Let's Get Start</span>
                     </div>
                     <div className = 'howtoButton'>
-                    <button className= "badge badge-danger" onClick = {this.nextstate}>How to?</button>
+                   <span className= "badge badge-danger" onClick = {this.backstate}>How to</span>
                     </div>
-                    <image src ={mc} className = 'mc' />
+                    </div>
                 </div>         
                 )
         }
@@ -197,19 +226,22 @@ class AppPage extends Component {
                         );
                     }           
     }
+
     performbackButton(){
-        if(this.state.page !== 0 && this.state.page !== 5){
+        if(this.state.page > 0 && this.state.page !== 5){
             return (
                 <span className = "badge badge-primary" onClick = {this.backstate}>Back</span>
             );
         }
     }
     performCard(){
-        if(this.state.page !== 0  && this.state.page !==5  ){
+        
+        if(this.state.page > 0  && this.state.page !==5  ){
             return (
                 <Card list = {this.state.input} page = {this.state.page} coin = {this.state.coin}/>
             );
         }
     }
-}
+
+    }
 export default AppPage;

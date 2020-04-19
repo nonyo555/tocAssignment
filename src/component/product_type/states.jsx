@@ -53,16 +53,28 @@ function States(input){
         img = sib
     }
     
-   
     return (
         <div className ='stateBox'>
         <div className = 'box'>
-        <img src = {arr} className  = 'arrow' />
+    <span >{arrstate(input.each)}</span>
         </div>
         <div className = 'box'>
         <img src = {img} className  = 'img'/>
         </div>
         </div>
     );
+}
+function arrstate(x){
+    if (x === '0' || x ==='1' || x ==='2'){
+        return(
+            <div className ='inputText'>
+        <span className = 'badge badge-danger'>INPUT</span> 
+         </div>
+        )
+    }
+    else
+        return(
+            <img className  = 'arrow' src ={redarrow}  />
+        )
 }
 export default States;

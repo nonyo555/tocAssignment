@@ -2,7 +2,7 @@ import { render } from 'react-dom'
 import React, { useState } from 'react'
 import { useSpring, animated as a } from 'react-spring'
 import dog from './product_picture/dog.jpg'
-import DFA from './product_picture/DFA.png'
+import DFA from './product_picture/DFA2.png'
 import './card.scss'
 import States from './states'
 import start from './product_picture/start.png'
@@ -71,10 +71,9 @@ function Card(stateList) {
       <img src = {imgcurrent} className = 'imgcurrent' />
       <img src = {redarrow} className = 'redarrow' />
         <img src = {imgstate} className = 'imgstate' />
-        <div className ='inputText'>
-         <span className = 'badge badge-danger'>INPUT</span>
-         </div>
-         <span className = 'inputBox'> {stateList.list.map(ele =>(
+        
+         <span className = 'inputBox'>
+            {stateList.list.map(ele =>(
             <States each = {ele} key ={ele} />
           ))}</span>
       </a.div>

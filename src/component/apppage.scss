@@ -62,21 +62,20 @@ opacity: 0;
     left: 95%;
     position: absolute ;
   }
-  .startButton{
-    font-size: 30px;
-    color: white;
-    left:50%;
-  }
+
   .App-link {
     color: #61dafb;
   }
   .logo{
+  
     position:  absolute;
     top: 1%;
-    height:   62.5px;
+    height:   50.5px;
     width:   250px;
+    background-size: cover;
+    background-color: red;
   }
-  
+
   @keyframes App-logo-spin {
     from {
       transform: rotate(0deg);
@@ -87,6 +86,51 @@ opacity: 0;
   }
   .mc{
     position: absolute;
+    bottom : 18%;
     left: 37.5%;
+    width: 500px;
+    height: 500px;
+    background-image: url(./product_type/product_picture/mc.png);
   }
-  
+  .startButton{
+    position:  absolute;
+    font-size: 30px;
+    color: white;
+    left: 35%;
+    top : 40%;
+  }
+  .howtoButton{
+    position:  absolute;
+    font-size: 30px;
+    color: white;
+    right: -30.5%;
+    
+    bottom: 50%;
+  }
+  .howto{
+    position : absolute;
+    top: 20%;
+    left: 12.5%;
+    text-align: right;
+    width: 1272px;
+    height: 520px;
+    background-image: url(./product_type/product_picture/howto.png);
+  }
+  .studentName{
+    position: absolute;
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-color: white;
+    border-color: black;
+    border: 3px solid black; 
+    max-width: 400px;
+  }
+  .Home{
+    height: 90vh ;
+    //width:   500vh;
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: bottom center;
+    background-image: url(./product_type/product_picture/bgRea1.jpg);
+  }

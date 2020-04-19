@@ -1,15 +1,13 @@
-.productBox {
-    position: fixed;
-    display:  flex;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(197, 4, 4, 0.2);
-    max-width: fit-content;
-    margin: auto;
-    left : 22%;
-    bottom: 3%;  
-    align-self: center;
-
-   
+.productBox2 {
+  position: fixed;
+  display:  flex;
+  background-color : red;
+  box-shadow: 0 4px 8px 0 rgba(197, 4, 4, 0.2);
+  max-width: fit-content;
+  margin: auto;
+  left : 12%;
+  bottom: 3%;  
+  align-items: center;
   }
   body {
     background-color: lightblue;
