@@ -1,8 +1,7 @@
 import { render } from 'react-dom'
 import React, { useState } from 'react'
 import { useSpring, animated as a } from 'react-spring'
-import dog from './product_picture/dog.jpg'
-import DFA from './product_picture/DFA2.png'
+import DFA from './product_picture/TocDFA.png'
 import './card.scss'
 import States from './states'
 import start from './product_picture/start.png'
@@ -19,7 +18,6 @@ import taste from './product_picture/taste.png'
 import size from './product_picture/size.png'
 import coin  from './product_picture/coin.png'
 import redarrow from './product_picture/redarrow.png' 
-
 import fenfly from './product_picture/french.png'
 import chip from './product_picture/lay.png'
 import spiral from './product_picture/spiral.png'
@@ -30,6 +28,7 @@ import nori from './product_picture/nori.png'
 import s from './product_picture/s.png'
 import m from './product_picture/m.png'
 import l from './product_picture/l.png'
+
 function Card(stateList) {
   const [flipped, set] = useState(false)
   const { transform, opacity } = useSpring({
@@ -62,7 +61,7 @@ function Card(stateList) {
       imgcurrent = imagereturn(stateList.coin)
     else
       imgcurrent = imagereturn(stateList.list[stateList.list.length -1])
-    imgstate = coin
+      imgstate = coin
   }
   return (
   <a.div style={fade}>
@@ -71,6 +70,12 @@ function Card(stateList) {
       <img src = {imgcurrent} className = 'imgcurrent' />
       <img src = {redarrow} className = 'redarrow' />
         <img src = {imgstate} className = 'imgstate' />
+
+        <div className= 'swapIcon'>
+        <svg class="bi bi-play-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 010 1.393z"/>
+        </svg>
+        </div>
         
          <span className = 'inputBox'>
             {stateList.list.map(ele =>(
@@ -78,6 +83,7 @@ function Card(stateList) {
           ))}</span>
       </a.div>
       <a.div class="c front" style={{ opacity, transform: transform.interpolate(t => `${t} rotateX(180deg)`),backgroundImage: `url(${DFA})`}} >
+        {performArrow(stateList.list,stateList.coin)}
       </a.div>
     </div>
     </a.div>
@@ -135,5 +141,129 @@ else if (x === 'M'){
 else if (x === 'L'){
   return l
 } 
+}
+function performArrow(statelist,coin) {
+  var list = Array.from(statelist)
+  var tops = "0%";
+  var lefts = "0%";
+  if(list.length ===0){
+    tops = "26%"
+    lefts = "1%"
+  }
+
+  if (list[list.length-1] === '0'){
+    tops = "5%"
+    lefts = "9.5%"
+  }
+  else if (list[list.length-1]=== '1'){
+    tops = "26%"
+    lefts = "9.5%"
+  }
+  else if (list[list.length-1]=== '2'){
+    tops = "48%"
+    lefts = "9.5%"
+  }
+  else if (list[list.length-1] === 'A'){
+    tops = "3.75%"
+    lefts = "20%"
+  }
+  else if (list[list.length-1] === 'B'){
+    tops = "20%"
+    lefts = "20%"
+  }
+  else if (list[list.length-1]=== 'C'){
+    tops = "35.75%"
+    lefts = "20%"
+  }
+  else if (list[list.length-1] === 'D'){
+    tops = "53%"
+    lefts = "20%"
+  }
+  else if (list[list.length-1] === 'S'){
+    tops = "5%"
+    lefts = "34%"
+  }
+  else if (list[list.length-1]=== 'M'){
+    tops = "30%"
+    lefts = "34%"
+  }
+  else if (list[list.length-1] === 'L'){
+    tops = "54%"
+    lefts = "34%"
+  }
+  else if (list[list.length-1] ===5  ||list[list.length-1]  === 10)
+  {
+    if (list[2] === 'S'){
+        if(coin === 5){
+          tops = "-1%"
+          lefts = "43.5%"
+        }
+        else if(coin === 10){
+          tops = "12%"
+          lefts = "43%"
+        }
+        else if(coin === 15){
+          tops = "-1%"
+          lefts = "52%"
+        }
+    }
+    else if (list[2] === 'M'){
+      if(coin === 5){
+        tops = "24.5%"
+        lefts = "43.5%"
+      }
+      else if(coin === 10){
+        tops = "35.5%"
+        lefts = "43.5%"
+      }
+      else if(coin === 15){
+        tops = "23.5%"
+        lefts = "52%"
+      }
+      else if(coin === 20){
+        tops = "35.5%"
+        lefts = "52%"
+      }
+      else if(coin === 25){
+        tops = "26%"
+        lefts = "59%"
+      }
+    }
+    else if (list[2] === 'L'){
+      if(coin === 5){
+        tops = "47.5%"
+        lefts = "43.5%"
+      }
+      else if(coin === 10){
+        tops = "60.5%"
+        lefts = "43.5%"
+      }
+      else if(coin === 15){
+        tops = "47.5%"
+        lefts = "52%"
+      }
+      else if(coin === 20){
+        tops = "60.5%"
+        lefts = "52%"
+      }
+      else if(coin === 25){
+        tops = "47.5%"
+        lefts = "59%"
+      }
+      else if(coin === 30){
+        tops = "60.5%"
+        lefts = "59%"
+      }
+      else if(coin === 35){
+        tops = "47.5%"
+        lefts = "67%"
+      }
+    }
+
+  }
+  return (
+    <img src ={redarrow} style ={{position: "absolute",top :tops,left:lefts}} className ='stateArrow'/>
+  )
+
 }
 export default Card;

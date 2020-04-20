@@ -67,13 +67,12 @@ opacity: 0;
     color: #61dafb;
   }
   .logo{
-  
     position:  absolute;
-    top: 1%;
-    height:   50.5px;
-    width:   250px;
+    height:   85.5px;
+    width:   300px;
     background-size: cover;
-    background-color: red;
+    background-image: url(./product_type/product_picture/Logo.png);
+    background-position: center center;
   }
 
   @keyframes App-logo-spin {
@@ -87,7 +86,7 @@ opacity: 0;
   .mc{
     position: absolute;
     bottom : 18%;
-    left: 37.5%;
+    left: 45%;
     width: 500px;
     height: 500px;
     background-image: url(./product_type/product_picture/mc.png);
@@ -100,12 +99,9 @@ opacity: 0;
     top : 40%;
   }
   .howtoButton{
-    position:  absolute;
-    font-size: 30px;
-    color: white;
-    right: -30.5%;
-    
-    bottom: 50%;
+    top: 20px;
+    left: 93.5%;
+    position: absolute ;
   }
   .howto{
     position : absolute;
@@ -118,13 +114,15 @@ opacity: 0;
   }
   .studentName{
     position: absolute;
+    width:   700px  ;
+    height:  400px;
     background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center;
-    background-color: white;
-    border-color: black;
-    border: 3px solid black; 
-    max-width: 400px;
+    top:20%;
+    left : 2.5%;
+    background-image: url(./product_type/product_picture/bboard.png);
+    border: 2px solid black; 
+    
+    text-align: center;
   }
   .Home{
     height: 90vh ;
@@ -133,4 +131,35 @@ opacity: 0;
     background-repeat:   no-repeat;
     background-position: bottom center;
     background-image: url(./product_type/product_picture/bgRea1.jpg);
+  }
+  .detailDFA{
+    height: 600px;
+    width: 1200px;
+    background-color: white;
+  }
+  .modelDFA{
+    vertical-align: text-top;
+    text-align: right;
+    position: absolute;
+    top : 12.5%;
+    left: 20%;
+  }
+  .closeDFA{
+    position: absolute;
+    right:0%;
+    top: 0%
+  }
+  .DFAButton{
+    position: absolute;
+    left: 80%;
+    top : 20%;
+    font-size: 30px;
+  }
+  .DFAinputDetail{
+    font-size: 20px;
+    position: absolute;
+    text-align: left;
+    background-color: white;
+    left: 80%;
+    top : 30%;
   }

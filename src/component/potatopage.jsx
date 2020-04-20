@@ -12,6 +12,7 @@ class  Potatopage extends Component {
         ]
       };
     render() { 
+        
         return (    
             <div><CSSTransition
             in = {true}

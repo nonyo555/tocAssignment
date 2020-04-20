@@ -21,9 +21,10 @@
 .successbtn{
     font-size : 30 px;
     position: absolute;
-    bottom: 17%;
-    left:43%;
+    bottom: 20%;
+    left:40%;
     text-align: center;
+
 }
 .receiptPrice{
     font-size: 10px;
@@ -37,3 +38,9 @@
     top: 80%;
     right : 13%;
 }
+.receiptInput{
+    position: absolute;
+    left : 60%;
+    top  : 35%
+}
+

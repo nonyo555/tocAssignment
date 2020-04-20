@@ -8,9 +8,9 @@ import './apppage.scss'
 import {CSSTransition} from 'react-transition-group'
 import firebasedb from './product_type/db/firebasedb';
 import Card from './product_type/card'
-import logoabc  from './product_type/product_picture/Logo.png'
+import logo  from './product_type/product_picture/Logo.png'
 import mc from './product_type/product_picture/mc.png'
-
+import fullDFA from './product_type/product_picture/DFA2.png'
 class AppPage extends Component {
     state = {
         howpage : 1,
@@ -31,6 +31,9 @@ class AppPage extends Component {
     nextstate= ()=>{
         this.setState( {page :this.state.page+ 1})
     }
+    back2state= ()=>{
+        this.setState( {page :-2})
+    }
     samestate = ()=>{
         this.setState( {page :this.state.page})
     }
@@ -47,7 +50,8 @@ class AppPage extends Component {
         })
     }
     startstate= ()=>{
-        alert("Your order has success")
+        if (this.state.page === 5)
+         {alert("Your order has success")}
         this.setState( {
             page : 0,
             input:[],
@@ -139,23 +143,33 @@ class AppPage extends Component {
             <script src="/__/firebase/init.js"></script>
                   <header className="App-header">
                     <div className = 'logoBox'>
-                  <image src={logoabc} className='logo' />
+                  <div  className='logo' />
                   </div>
                     <div className='subjectName'>
-                    
                     <span className = "badge badge-primary">Theory of Computation</span>
                     </div>
-                  {/* <span className = "badge badge-warning" onClick= {this.detailstate}>?</span> */}
-                  <span className='backButton'>{this.performbackButton()}</span>
+                  <span >{this.performbackButton()}</span>
             </header>
+            <div className = 'Home'>
             <span>{this.performCard()}</span>
             <span>{this.switchPage()}</span>
-            
-      
+            </div>
             </div>
         );
     }
     switchPage(){
+        if (this.state.page === -2){
+            return (
+                <div className = 'modelDFA'>
+                        <div >
+                        <img src={fullDFA} className = 'detailDFA'></img>
+                        </div>
+                        <div  className= 'closeDFA'>
+                        <span className='btn-danger' onClick = {this.startstate}>[ X ]</span>
+                        </div>                  
+                </div>
+            )
+        }
         if (this.state.page === -1){
          return (
              <div className = 'howto'>
@@ -168,9 +182,11 @@ class AppPage extends Component {
         else if(this.state.page === 0){
             //HomePage
             return (
-                <div className = 'Home'>
+                <div >
                     <div className = 'studentName'>
-                    <h1>CE Project</h1>
+                    <br />
+                    <h1>CE Potato</h1>
+                    <h1>นำเสนอโดย</h1>
                     <h2>
                         รหัสนักศึกษา     ชื่อ-นามสกุล
                     </h2>
@@ -180,16 +196,35 @@ class AppPage extends Component {
                     bah <br/>
                     bah <br/>
                     bah <br/>
-
+                    คำแนะนำ : หลังจากเริ่มใช้งาน ผู้ใช้สามารถกดจอแสดงผล <br/>  
+                    เพื่อสลับหน้าจอแสดงผล
                     </span>
                     </div>
                     <div  className = 'mc' > 
                     <div className = 'startButton'>
                     <span className= "badge badge-dark" onClick = {this.nextstate}>Let's Get Start</span>
                     </div>
-                    <div className = 'howtoButton'>
-                   <span className= "badge badge-danger" onClick = {this.backstate}>How to</span>
                     </div>
+                    <div className = 'DFAButton'>
+                    <span className= "btn btn-dark" onClick = {this.back2state}>Look DFA Model</span>
+                    </div>
+                    <div className = 'DFAinputDetail'>
+                        <span className= "badge badge-dark" >Input Detail </span>
+                        <span>
+                        <br/>
+                        0 : Frenh Fries ,
+                        1 : Chips,<br/>
+                        2 : Spiral Potato,
+                        A : Paprika,<br/>
+                        B : Salt,
+                        C : BBQ,<br/>
+                        D : Seaweed Nori,
+                        S : S size,<br/>
+                        M : M size,
+                        L : L size,<br/>
+                        V : 5 coin,
+                        X : 10 coin
+                        </span>
                     </div>
                 </div>         
                 )
@@ -209,14 +244,12 @@ class AppPage extends Component {
             //Model Detaail (?) sign 
              return( 
                 <Sizepage  page = {this.state.page} nextstate = {this.nextstate} test={this.test} setsize={this.setsize}/>
-
                 );
             }
             else if (this.state.page ===4) {
                 //Model Detaail (?) sign 
                  return(          
                     <Coinpage  page = {this.state.page} coin ={this.state.coin} nextstate = {this.nextstate} test={this.test} price={this.state.price} addmoney={this.addmoney}/>
-
                     );
                 }
             else if (this.state.page ===5 ) {
@@ -231,8 +264,15 @@ class AppPage extends Component {
     performbackButton(){
         if(this.state.page > 0 && this.state.page !== 5){
             return (
-                <span className = "badge badge-primary" onClick = {this.backstate}>Back</span>
-            );
+                <span className='backButton'>
+                    <span className = "badge badge-primary" onClick = {this.backstate}>Back</span>
+                </span>
+                
+            );}
+        else if (this.state.page === 0){
+        return ( <div className = 'howtoButton'>
+            <span className= "badge badge-danger" onClick = {this.backstate}>How to</span>
+             </div>)
         }
     }
     performCard(){
